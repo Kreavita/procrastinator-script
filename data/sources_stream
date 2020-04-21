@@ -1,0 +1,4 @@
+# The Stream Sources List.
+# Add new sources in the following scheme: 'Example Subject; https://example.url/example/stream; DD.MM.YYYY hh:mm:ss'
+# Example: Test; https://test.bigbluebutton.org/; 09.04.2020 14:03:00
+# Note: The time format must be exactly like this or it wont work
