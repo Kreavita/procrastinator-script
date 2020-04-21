@@ -3,7 +3,7 @@ A tool that automatically downloads and updates media files and documents from v
 
 It requires either Firefox _(preferred)_ or Chrome to be installed and runs on Linux and Windows. (macOS is not tested.)
 
-##1. Features
+## 1. Features
 
 - automatically download new and updated files from web services specified in `data/sources_sync`
 - schedule and record`bigbluebutton` streams specified in `data/sources_stream` automatically at the specified time and for the specified duration
@@ -51,7 +51,7 @@ After that, all you have to do is to put `C:\Program Files\ffmpeg\bin` to the Us
 
 7. On Windows: **restart the pc**
 
-##4. Setup
+## 4. Setup
 
 Set up the **sources** in the `data` folder, one line for each source, data separated by `;`
 
@@ -99,7 +99,7 @@ Set up the **script** in the *config* section of `procrastinatorScript.py` to fu
 * **OTHER_LOGINS**: If some of your sources require HTTP Authentication, add the login credentials to this list
 * **PROJECT_DIR** The Directory name where all Media Files will be organized
 
-##5. Launch
+## 5. Launch
 
 Double Click `procrastionarScript100.py` and maximize the window. Now it should be working
 
