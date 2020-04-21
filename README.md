@@ -64,7 +64,7 @@ Set up the **sources** in the `data` folder, one line for each source, data sepa
 
 ​	(Note: Folders Names can include sub folders such as `folder/subfolder`)
 
-Set up the **script** in the *config* section of `procrastinatorScript.py` to fulfill your needs:
+Set up the **script** in the *config* section of `procrastinatorScript100.organized.py` to fulfill your needs:
 
 * **STREAM_RECORDING**: Do you wish to record scheduled streams? (True/False)
 
@@ -101,7 +101,7 @@ Set up the **script** in the *config* section of `procrastinatorScript.py` to fu
 
 ## 5. Launch
 
-Double Click `procrastionarScript100.py` and maximize the window. Now it should be working
+Double Click `procrastionarScript100.organzied.py` and maximize the window. Now it should be working
 
 (Note: on Windows, just double click the `start-windows.bat`)
 
