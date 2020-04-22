@@ -146,22 +146,29 @@ def stream_runner(i):
     print("Stream Runner: starting stream record at: {0}".format(time.ctime(time.time())))
 
     with util.get_driver(False) as driver:
-        driver.get(stream_urls[i])
+        loaded = False
+        tries = 0
 
-        selenium_login(driver)
-        try:
-            driver.find_element_by_name("username").send_keys(TUD_NAME)
-        except:
-            print("Stream Runner: selenium: stream name skipped")
-        try:
-            driver.find_element_by_class_name("submit_btn").click()
-        except:
-            print("Stream Runner: selenium: stream name submit skipped")
-        try:
-            driver.find_element_by_class_name("icon-bbb-listen").click()
-        except:
-            print("Stream Runner: selenium: join button skipped")
+        while not loaded and tries < 5:
+            driver.get(stream_urls[i])
 
+            selenium_login(driver)
+            try:
+                driver.find_element_by_name("username").send_keys(TUD_NAME)
+            except:
+                print("Stream Runner: selenium: stream name skipped")
+            try:
+                driver.find_element_by_class_name("submit_btn").click()
+            except:
+                print("Stream Runner: selenium: stream name submit skipped")
+            try:
+                driver.find_element_by_class_name("icon-bbb-listen").click()
+                loaded = True
+            except:
+                print("Stream Runner: selenium: join button not found ({0} of 5 tries)".format(tries + 1))
+                tries = tries + 1
+                time.sleep(150)
+                
         #time.sleep(STREAM_DURATION * 60)
         obs_record(STREAM_DURATION * 60)
     
