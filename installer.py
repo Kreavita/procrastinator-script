@@ -40,7 +40,7 @@ def dl_list(d, l):
             os.unlink(p)
             os.unlink(p[:-3])
 
-script = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/procrastinatorScript100.py"
+script = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/procrastinatorScript100.organized.py"
 util = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/selenium_util.py"
 jumpcutter = "https://raw.githubusercontent.com/carykh/jumpcutter/master/jumpcutter.py"
 
