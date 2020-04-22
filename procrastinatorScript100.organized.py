@@ -285,6 +285,9 @@ def sync_runner(i, driver):
             main_sync(False, i, util.find_links(sync_urls[i], req.text))
     elif req.status_code < 300:
         driver.get(href)
+    
+        try: driver.find_element_by_class_name("pager-showall").click()
+        except Exception: pass
         
         try: files = [item for item in driver.find_element_by_class_name("table-panel").find_elements_by_tag_name("tr")]
         except (sel.exceptions.NoSuchElementException, sel.exceptions.WebDriverException): files = []
