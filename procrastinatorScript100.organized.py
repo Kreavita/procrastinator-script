@@ -13,7 +13,7 @@
 # Script config:
 #------------------------------------------------
 STREAM_RECORDING = False # Do you wish to record scheduled streams? (True/False)
-STREAM_DURATION = 1 # Duration of a Streaming session (in minutes)
+STREAM_DURATION = 100 # Duration of a Streaming session (in minutes)
 OBS_OUTPUT = "C://User/name/Videos" # Path to the OBS recordings, you need to change this!
 OBS_FPS = 60 # The framerate of your recordings. Set it to 0 and the script tries to detect it, but it wont always work
 PATH_OBS = "C://Program Files/obs-studio/bin/64bit" # - Path to the obs64 executable, the screen recorder, you shouldnt change this on windows after a normal OBS installation
