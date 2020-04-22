@@ -101,7 +101,7 @@ Set up the **script** in the *config* section of `procrastinatorScript100.organi
 
 ## 5. Launch
 
-Double Click `procrastionarScript100.organzied.py` and maximize the window. Now it should be working
+Double Click `procrastionarScript100.organized.py` and maximize the window. Now it should be working
 
 (Note: on Windows, just double click the `start-windows.bat`)
 
