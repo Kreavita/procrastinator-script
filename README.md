@@ -1,7 +1,15 @@
-# procrastinator-script
+# procrastinator-script v2.0
 A tool that automatically downloads and updates media files and documents from various cloud services of the TU Dresden in the background, such as OPAL or Magma.
 
 It requires either Firefox _(preferred)_ or Chrome to be installed and runs on Linux and Windows. (macOS is not tested.)
+
+###### Patch Notes:
+
+v2.0:
+
+- reorganized entire script and split into modules
+- script does now prevent overlapping of streams and sync, to prevent reduction of streaming / stream recording quality through ongoing downloads or video editing, by rescheduling the sync and combining the jumpcut execution part with the stream recording
+- added zoom as Streaming source (beta, requires you to solve a captcha every time)
 
 ## 1. Features
 
