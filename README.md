@@ -14,7 +14,7 @@ v2.0:
 ## 1. Features
 
 - automatically download new and updated files from web services specified in `data/sources_sync`
-- schedule and record`bigbluebutton` streams specified in `data/sources_stream` automatically at the specified time and for the specified duration
+- schedule and record `bigbluebutton` and `zoom` streams specified in `data/sources_stream` automatically at the specified time and for the specified duration
 - edit recorded and downloaded videos automatically using [Jumpcutter](https://github.com/carykh/jumpcutter), a python video editor which removes silent parts by [carykh](https://www.youtube.com/user/carykh)
 
 ## 2. Installation (simple)
@@ -73,7 +73,7 @@ Set up the **sources** in the `data` folder, one line for each source, data sepa
 
 ​	(Note: Folders Names can include sub folders such as `folder/subfolder`)
 
-Set up the **script** in the *config* section of `procrastinatorScript100.organized.py` to fulfill your needs:
+Set up the **script** in the `config.py` to fulfill your needs:
 
 * **STREAM_RECORDING**: Do you wish to record scheduled streams? (True/False)
 
