@@ -39,9 +39,10 @@ After that, all you have to do is to put `C:\Program Files\ffmpeg\bin` to the Us
 
    Linux: install ffmpeg with your package manager
 
-5. **Download the Jumpcutter.**
+~~5. **Download the Jumpcutter.**~~
 
-   Download [jumpcutter.py](https://raw.githubusercontent.com/carykh/jumpcutter/master/jumpcutter.py) and put it in the same directory as this script
+   ~~Download [jumpcutter.py](https://raw.githubusercontent.com/carykh/jumpcutter/master/jumpcutter.py) and put it in the same directory as this script~~
+   no longer needed as i include a customized version in the script
 
 6. **Download a WebDriver**
 

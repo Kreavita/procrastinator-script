@@ -1,13 +1,14 @@
 import os, subprocess, zipfile, sys, shutil, time
 
+app_name = "Procrastinator Script v2.0"
 launch_path = os.path.dirname(os.path.abspath(__file__))
 
-try: os.mkdir(os.path.join(launch_path, "data"))
-except Exception: pass
-try: os.mkdir(os.path.join(launch_path, "download"))
+try: os.mkdir(os.path.join(launch_path, "modules", "util", "download"))
 except Exception: pass
 try: os.mkdir(os.path.join(launch_path, "driver"))
 except Exception: pass
+
+input("To begin the installation of '{0}', press Enter".format(app_name))
 
 proc = subprocess.check_call([sys.executable, "-m", "pip", "install", "selenium", "requests", "pillow", "audiotsm", "scipy", "numpy", "pytube3"])
 
@@ -41,18 +42,37 @@ def dl_list(d, l):
             os.unlink(p[:-3])
 
 script = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/procrastinatorScript100.organized.py"
-util = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/selenium_util.py"
-jumpcutter = "https://raw.githubusercontent.com/carykh/jumpcutter/master/jumpcutter.py"
+dl_list("", [script])
 
-dl_list("", [jumpcutter, script, util])
+if not os.path.isfile(os.path.join(launch_path, "config.py")):
+    config = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/config.py"
+    dl_list("", [script])
+    
+try:
+    os.mkdir(os.path.join(launch_path, "data"))
+
+    file_db = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/file_db"
+    sources_stream = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/sources_stream"
+    sources_sync = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/sources_sync"
+    last_updated = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/last_updated"
+    
+    dl_list("data", [sources_stream, sources_sync, file_db, last_updated])
+except Exception: pass
 
 
-file_db = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/file_db"
-sources_stream = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/sources_stream"
-sources_sync = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/sources_sync"
-last_updated = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/data/last_updated"
+stream = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/stream.py"
+sync = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/sync.py"
+jumpcut = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/jumpcut.py"
 
-dl_list("data", [sources_stream, sources_sync, file_db, last_updated])
+dl_list("modules", [stream, sync, jumpcut])
+
+util = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/util/util.py"
+fm = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/util/file_manager.py"
+lf = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/util/login_flows.py"
+mime = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/util/mime"
+jc = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/modules/util/jumpcutter.py"
+
+dl_list("modules/util", [util, mime, lf, fm, jc])
 
 
 if os.name == "nt":
@@ -84,3 +104,5 @@ else:
     subprocess.check_call(['apt-get', 'install', '-y', 'ffmpeg', 'obs-studio'], executable="/bin/bash")
 
 dl_list("driver", [url_gecko, url_chrome])
+
+input("'{0}' has been installed successfully. You can close this window now.".format(app_name))
