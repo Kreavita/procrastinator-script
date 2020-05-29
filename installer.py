@@ -3,9 +3,9 @@ import os, subprocess, zipfile, sys, shutil, time
 app_name = "Procrastinator Script v2.0"
 launch_path = os.path.dirname(os.path.abspath(__file__))
 
-try: os.mkdir(os.path.join(launch_path, "modules", "util", "download"))
+try: os.makedirs(os.path.join(launch_path, "modules", "util", "download"))
 except Exception: pass
-try: os.mkdir(os.path.join(launch_path, "driver"))
+try: os.makedirs(os.path.join(launch_path, "driver"))
 except Exception: pass
 
 input("To begin the installation of '{0}', press Enter".format(app_name))
@@ -46,7 +46,7 @@ dl_list("", [script])
 
 if not os.path.isfile(os.path.join(launch_path, "config.py")):
     config = "https://raw.githubusercontent.com/Kreavita/procrastinator-script/master/config.py"
-    dl_list("", [script])
+    dl_list("", [config])
     
 try:
     os.mkdir(os.path.join(launch_path, "data"))
